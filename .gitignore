@@ -7,6 +7,7 @@
 *.iml
 out
 gen
+myapp/migrations
 venv/
 db.sqlite3
 mysite/__pycache__/
