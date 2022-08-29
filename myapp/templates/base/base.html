@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% load bootstrap5 %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pagename }} -</title>
+
+    {% bootstrap_css %}
+    {% block extra_css %}
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+</head>
+
+<body>
+<div id="app">
+    <header class="bg-light">
+        {% include 'base/menu.html' %}
+    </header>
+
+    <main role="main" class="list-page">
+        {% bootstrap_messages %}
+        {% block content %} {% endblock %}
+    </main>
+
+    <footer class="footer">
+        {% block footer %}
+        <div class="container text-center">
+            <span class="text-muted">&copy; , {% now "Y" %}</span>
+        </div>
+        {% endblock %}
+    </footer>
+</div>
+
+{% bootstrap_javascript %}
+</body>
+
+
+</html>

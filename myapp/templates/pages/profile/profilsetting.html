@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg-light h-100">
+    <div class="container">
+        <h3 class="mb-4">Настройки профиля</h3>
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="#">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="validationCustom01">Имя</label>
+                            {{ form.first_name }}
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationCustom02">Фамилия</label>
+                            {{ form.last_name }}
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationCustomUsername">Имя пользователя</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend">#</span>
+                                </div>
+                                {{ form.username }}
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationCustomEmail">E-mail</label>
+                            {{ form.email }}
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

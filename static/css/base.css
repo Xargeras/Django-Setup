@@ -1,0 +1,40 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.list-page {
+    flex: 1;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.page-block-top {
+    background-color: var(--light);
+    padding-bottom: 50px;
+}
+
+.page-block-bottom {
+    background-color: var(--white);
+}
+
+.footer {
+    position: unset;
+}
+
+.truncate-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+    height: 3.9em;
+}

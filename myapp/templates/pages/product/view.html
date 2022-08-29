@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-3">
+        <div class="card">
+            <div class="card-header">
+                <h3>{{ product.user }}</h3>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ product.name }}</h4>
+                <p class="card-text">{{ product.description }}</p>
+                <div class="card-text">{{ product.price }}</div>
+                <div class="card-text">{{ product.amount }}</div>
+                {% if del %}
+                    <form class="" action="" method="post">
+                        {% csrf_token %}
+                        <input name="delete" value="delete" hidden/>
+                        <input class="btn btn-outline-danger" type="submit" value="Удалить Товар" />
+                    </form>
+                {% else %}
+                    <form class="" action="" method="post">
+                        {% csrf_token %}
+                        <input name="buy" value="buy" hidden/>
+                        <input class="btn btn-primary" type="submit" value="Купить товар" />
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
